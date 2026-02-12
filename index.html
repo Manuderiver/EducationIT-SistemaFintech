@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EducacionIT Wallet - Fintech</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div id="login-screen" class="container">
+        <h1>EducacionIT Wallet</h1>
+        <p>Bienvenido Usuario</p>
+        <input type="email" id="login-email" placeholder="Correo electrónico (moe@fintech.com)">
+        <input type="password" id="login-pass" placeholder="Contraseña (duff123)">
+        <button onclick="app.login()">Login</button>
+    </div>
+
+    <div id="dashboard-screen" class="container hidden">
+        <h1 id="user-welcome">Cargando...</h1>
+        
+        <div class="balance-card">
+            <p>Saldo Disponible</p>
+            <div class="balance" id="display-saldo">$0</div>
+        </div>
+
+        <div class="actions-grid">
+            <button onclick="app.operar('ingresar')">Ingresar dinero</button>
+            <button onclick="app.operar('retirar')">Retirar dinero</button>
+            
+            <button onclick="app.verMovimientos()">Ver movimientos</button>
+            
+            <button onclick="app.validarSeguridad()" style="background-color: #27ae60;">Validar Seguridad (Blockchain)</button>
+            
+            <button class="btn-exit" onclick="location.reload()">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script src="entidades.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
