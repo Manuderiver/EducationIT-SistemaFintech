@@ -31,3 +31,26 @@ El sistema se basa en tres clases principales:
 
 ##  Desafío Blockchain
 Se ha implementado una función de hashing personalizada que vincula cada movimiento con el anterior. Puede verificar la seguridad presionando el botón **"Validar Seguridad"** en el panel principal; el sistema recorrerá la cadena confirmando que ningún dato haya sido manipulado.
+
+classDiagram
+    Cliente <|-- Cuenta
+    Cuenta *-- Movimiento
+    class Cliente{
+        +int id
+        +string nombre
+        +string email
+        +string password
+    }
+    class Cuenta{
+        +string codigoUnico
+        +double saldo
+        +list movimientos
+        +consultarSaldo()
+    }
+    class Movimiento{
+        +string tipo
+        +double monto
+        +string hash
+        +string hashAnterior
+        +generarHash()
+    }
